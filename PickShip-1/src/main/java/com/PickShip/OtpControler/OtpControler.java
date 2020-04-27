@@ -18,6 +18,7 @@ public class OtpControler {
 
 		OtpRecord phoneNumber=otpRecordRepo.findByOtpPhone(otpRecord.getOtpPhoneNumber(),otpRecord.getOtp());
 		Long otpPhoneNumber =otpRecord.getOtpPhoneNumber();
+		System.out.println(otpPhoneNumber);
 		if(phoneNumber==null)
 			return false;
 		else
