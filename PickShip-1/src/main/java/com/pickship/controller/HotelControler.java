@@ -18,30 +18,27 @@ public class HotelControler
 {
 
     @Autowired
-    HotelRepo hotelRepo;
-
-    @Autowired
     HotelService hotelService;
 
-    @PostMapping("/add")
+    @PostMapping()
     public Hotel addHotel(Hotel hotel)
     {
 	return hotelService.addHotel(hotel);
     }
 
-    @GetMapping("/showhotel")
+    @GetMapping()
     public List<Hotel> showHotel()
     {
 	return hotelService.showHotel();
     }
 
-    @GetMapping("/offerhotel")
+    @GetMapping("/offerHotels")
     public List<Hotel> showHotelByOffer()
     {
 	return hotelService.showHotelByOffer();
     }
 
-    @GetMapping("/noofferhotel")
+    @GetMapping("/nonOfferHotels")
     public List<Hotel> showHotelNoOfferHotel()
     {
 	return hotelService.showHotelNoOfferHotel();

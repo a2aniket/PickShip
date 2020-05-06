@@ -23,13 +23,7 @@ public class CreateAccountControler
 
     @Autowired
     OtpRecordRepo otpRecordRepo;
-
-   
-
-   
-
-    int number;
-
+  
     @PostMapping("/home")
     public String createAccount(CreateAccount account)
     {
