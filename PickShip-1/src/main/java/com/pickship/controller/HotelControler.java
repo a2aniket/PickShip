@@ -13,7 +13,7 @@ import com.pickship.repo.HotelRepo;
 import com.pickship.service.HotelService;
 
 @RestControllerAdvice
-@RequestMapping("/hotel")
+@RequestMapping("parcelseva/v1/hotel")
 public class HotelControler
 {
 
@@ -32,13 +32,13 @@ public class HotelControler
 	return hotelService.showHotel();
     }
 
-    @GetMapping("/offerHotels")
+    @GetMapping("parcelseva/v1/offerHotels")
     public List<Hotel> showHotelByOffer()
     {
 	return hotelService.showHotelByOffer();
     }
 
-    @GetMapping("/nonOfferHotels")
+    @GetMapping("parcelseva/v1/nonOfferHotels")
     public List<Hotel> showHotelNoOfferHotel()
     {
 	return hotelService.showHotelNoOfferHotel();

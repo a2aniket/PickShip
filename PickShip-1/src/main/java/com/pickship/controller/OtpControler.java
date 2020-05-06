@@ -9,7 +9,7 @@ import com.pickship.entity.OtpRecord;
 import com.pickship.repo.OtpRecordRepo;
 
 @RestController
-@RequestMapping("/verify")
+@RequestMapping("parcelseva/v1/verify")
 public class OtpControler
 {
 
