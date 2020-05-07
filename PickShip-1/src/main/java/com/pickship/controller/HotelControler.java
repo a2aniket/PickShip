@@ -5,11 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.pickship.dto.HotelDetails;
 import com.pickship.entity.Hotel;
-import com.pickship.repo.HotelRepo;
 import com.pickship.service.HotelService;
 
 @RestControllerAdvice
@@ -18,30 +19,27 @@ public class HotelControler
 {
 
     @Autowired
-    HotelRepo hotelRepo;
-
-    @Autowired
     HotelService hotelService;
 
-    @PostMapping("/add")
-    public Hotel addHotel(Hotel hotel)
+    @PostMapping()
+    public Hotel addHotel(@RequestBody HotelDetails hotel)
     {
-	return hotelService.addHotel(hotel);
+	return hotelService.addHotel(hotel.getHotel());
     }
 
-    @GetMapping("/showhotel")
+    @GetMapping()
     public List<Hotel> showHotel()
     {
 	return hotelService.showHotel();
     }
 
-    @GetMapping("/offerhotel")
+    @GetMapping("/offerHotels")
     public List<Hotel> showHotelByOffer()
     {
 	return hotelService.showHotelByOffer();
     }
 
-    @GetMapping("/noofferhotel")
+    @GetMapping("/nonOfferHotels")
     public List<Hotel> showHotelNoOfferHotel()
     {
 	return hotelService.showHotelNoOfferHotel();
