@@ -15,7 +15,7 @@ import com.pickship.repo.OtpRecordRepo;
 import com.pickship.service.CreateAccountService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/parcelseva/v1/")
 public class CreateAccountControler
 {
 
@@ -27,6 +27,7 @@ public class CreateAccountControler
   
     @PostMapping()
     public String createAccount(@RequestBody CreateAccount account)
+
     {
 	CreateAccount getNumber = accountService.findByPhoneNumber(account.getPhoneNumber());
 	Long phoneNumber = account.getPhoneNumber();
