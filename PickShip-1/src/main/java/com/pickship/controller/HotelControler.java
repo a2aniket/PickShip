@@ -5,14 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.pickship.entity.Hotel;
 import com.pickship.repo.HotelRepo;
 import com.pickship.service.HotelService;
 
-@RestControllerAdvice
+@RestController
 @RequestMapping("/hotel")
 public class HotelControler
 {
@@ -21,7 +23,7 @@ public class HotelControler
     HotelService hotelService;
 
     @PostMapping()
-    public Hotel addHotel(Hotel hotel)
+    public Hotel addHotel(@RequestBody Hotel hotel)
     {
 	return hotelService.addHotel(hotel);
     }

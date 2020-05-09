@@ -16,7 +16,8 @@ public class HotelService
 
     public Hotel addHotel(Hotel hotel)
     {
-	return hotelRepo.save(hotel);
+	Hotel hotel2 =  hotelRepo.save(hotel);
+	return hotel2;
     }
 
     public List<Hotel> showHotel()

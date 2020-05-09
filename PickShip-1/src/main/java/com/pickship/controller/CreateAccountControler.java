@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,8 +25,8 @@ public class CreateAccountControler
     @Autowired
     OtpRecordRepo otpRecordRepo;
   
-    @PostMapping("/home")
-    public String createAccount(CreateAccount account)
+    @PostMapping()
+    public String createAccount(@RequestBody CreateAccount account)
     {
 	CreateAccount getNumber = accountService.findByPhoneNumber(account.getPhoneNumber());
 	Long phoneNumber = account.getPhoneNumber();
